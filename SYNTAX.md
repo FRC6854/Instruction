@@ -1,0 +1,24 @@
+# VIKING Instruction Sytntax
+NOTICE: Still being drafted, final idea will be different.  
+
+Universal Syntax for deploying future robot code.
+```
+0 goto 0
+100 goto ~ 500
+500 goto 20 60 800
+800 stop
+```
+## Clock Cycle
+The clock cycle is what executes commands. All commands are asynchronous and are loaded in via Viking. Commands will be executed by the badge, the badge is a number coralating to when the command should be executed. Badges run at 100hz or 100 every second.
+
+## Universal Functions
+### Goto Function
+Flags
+```
+{badge} goto {x} {y} {wait}
+```
+Wait is used as the end of a function, so it will stop exactly at the clocked end.
+
+# Variables
+## ~ Constant
+Use current variable, a example is ~ in a x function meaning no movement.
