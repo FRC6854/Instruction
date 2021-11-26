@@ -37,8 +37,17 @@ if os.path.exists(file_path):
     bakery = ""
     for i, data in tqdm(enumerate(data.splitlines()), desc="Converting File"):
         coords = data.split(",")
+        x = float(coords[0])-float(past_split[0])
+        y = float(coords[1])-float(past_split[1])
+        zero = float("0.0")
+        
+        if x == zero:
+            x = "~"
+        if y == zero:
+            y = "~"
+
         if data != past:
-            bakery += f"{i*ratio} goto {float(coords[0])-float(past_split[0])} {float(coords[1])-float(past_split[1])}\n"
+            bakery += f"{i*ratio} goto {x} {y}\n"
         past = data
         past_split = data.split(",")
     
