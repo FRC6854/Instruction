@@ -12,7 +12,7 @@ front = """
 {}░░╚██╔╝{}░░██║██║░╚██╗██║██║░╚███║╚██████╔╝
 {}░░░╚═╝{}░░░╚═╝╚═╝░░╚═╝╚═╝╚═╝░░╚══╝░╚═════╝░
 {}{}Instruction System translator for 2D CSV
-{}{}{}Experimental
+{}{}{}Experimental | Do not currently use with decimals 
 
 """
 
@@ -29,16 +29,18 @@ print("{}Line per second: {}".format("\u001b[34m", "\u001b[0m"), end="")
 ratio = int(input())
 
 if os.path.exists(file_path):
-    with open("test.csv") as f:
+    with open(file_path) as f:
         data = f.read()
     
     past = []
+    past_split = [0, 0]
     bakery = ""
     for i, data in tqdm(enumerate(data.splitlines()), desc="Converting File"):
         coords = data.split(",")
         if data != past:
-            bakery += f"{i*ratio} goto {coords[0]} {coords[1]}\n"
+            bakery += f"{i*ratio} goto {float(coords[0])-float(past_split[0])} {float(coords[1])-float(past_split[1])}\n"
         past = data
+        past_split = data.split(",")
     
     print("{}Extracted file: ".format("\u001b[34m"), end="")
 
