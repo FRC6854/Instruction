@@ -38,8 +38,8 @@ if os.path.exists(file_path):
     bakery = ""
     for i, data in tqdm(enumerate(data.splitlines()), desc="Converting File"):
         coords = data.split(",")
-        x = float(coords[0])-float(past_split[0])
-        y = float(coords[1])-float(past_split[1])
+        x = int(float(coords[0])-float(past_split[0]))
+        y = int(float(coords[1])-float(past_split[1]))
         zero = float("0.0")
         
         if x == zero:

@@ -5,7 +5,7 @@ Universal Syntax for deploying future robot code.
 ```
 0 goto 0
 1000 goto ~ 500
-5000 goto 20 60 800
+5000 goto 20 60
 8000 stop
 ```
 ## Clock Cycle
@@ -15,9 +15,8 @@ The clock cycle is what executes commands. All commands are asynchronous and are
 ### Goto Function
 Flags
 ```
-{badge} goto {x} {y} {wait}
+{badge} goto {x} {y}
 ```
-Wait is used as the end of a function, so it will stop exactly at the clocked end.
 
 # Variables
 ## ~ Constant
