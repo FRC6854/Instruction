@@ -1,1 +1,3 @@
+asyncio==3.4.3
+reflectdb==0.2
 tqdm==4.62.3
