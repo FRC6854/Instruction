@@ -17,10 +17,12 @@ public static void main(String[] args) {
             double badge = Integer.parseInt(raw[0]); // This is for timing. Theres currently no support for adaptive badges so its your choice to touch badges.
             double x = Integer.parseInt(raw[2]);
             double y = Integer.parseInt(raw[3]);
-
+            
             // Add stopwatch here (Theres one in WPILib)
 
-            // Add wait
+            // Run Code
+
+            // Add wait / subtract wait if behind
             
             System.out.println(x+" "+y);
 
