@@ -1,19 +1,28 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.ArrayList;
 
-public class ReadFile {  
+public class ReadInstruction {  
 public static void main(String[] args) {  
     try {
         File myObj = new File("example.txt");
         Scanner myReader = new Scanner(myObj);  
+
         while (myReader.hasNextLine()) {
             String data = myReader.nextLine();
             String[] raw = data.replace("~", "0").split(" ", 5);
 
-            int badge = Integer.parseInt(raw[0]);
-            int x = Integer.parseInt(raw[2]);
-            int y = Integer.parseInt(raw[3]);
+            double badge = Integer.parseInt(raw[0]); // This is for timing. Theres currently no support for adaptive badges so its your choice to touch badges.
+            double x = Integer.parseInt(raw[2]);
+            double y = Integer.parseInt(raw[3]);
+
+            // Add stopwatch here (Theres one in WPILib)
+
+            // Add wait
+            
+            System.out.println(x+" "+y);
+
 
         }
         myReader.close();
