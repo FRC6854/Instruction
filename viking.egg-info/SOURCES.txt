@@ -1,7 +1,0 @@
-README.md
-setup.py
-viking.egg-info/PKG-INFO
-viking.egg-info/SOURCES.txt
-viking.egg-info/dependency_links.txt
-viking.egg-info/requires.txt
-viking.egg-info/top_level.txt
