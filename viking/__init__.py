@@ -36,6 +36,7 @@ def main():
             data = f.read()
         
         past = []
+        past_badge = 0
         past_split = [0, 0]
         bakery = ""
         for i, data in tqdm(enumerate(data.splitlines()), desc="Converting File"):
@@ -44,13 +45,19 @@ def main():
             y = int(float(coords[1])-float(past_split[1]))
             zero = float("0.0")
             
+            # Create Dynamic Badge ABS (Convert - and + to +)
+            x_dyn = abs(x)
+            y_dyn = abs(y)
+                
             if x == zero:
                 x = "~"
             if y == zero:
                 y = "~"
 
             if data != past:
-                bakery += f"{i*ratio} goto {x} {y}\n"
+                badge = past_badge+(x_dyn*ratio)+(y_dyn+ratio)
+                bakery += f"{badge} goto {x} {y}\n"
+                past_badge = badge # Now that it isnt refrenced, you can create a future refrence
             past = data
             past_split = data.split(",")
         
