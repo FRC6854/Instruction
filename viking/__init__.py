@@ -22,8 +22,6 @@ def front():
 
 def main():
 
-    ratio = 10
-
     print("{}File: {}".format("\u001b[34m", "\u001b[0m"), end="")
 
     file_path = input()
