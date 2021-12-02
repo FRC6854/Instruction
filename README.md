@@ -7,8 +7,8 @@ Pip will be used for installing all requirements, just do `pip install viking`.
 Then you can run the script by doing
 ```
 user@computer ~ % python3
-from viking import main
-main()
+import viking
+viking.translate.main()
 ```
 ## Full CLI
 First, clone the repo. Then run
