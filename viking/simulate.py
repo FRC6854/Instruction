@@ -26,8 +26,8 @@ def main():
             command = raw[1]
 
             if command == "goto":
-                x = x+int(coords[0])/5
-                y = y+int(coords[1])/5
+                x = x+int(coords[0])/3
+                y = y+int(coords[1])/3
 
             setpos(x, y)
             print(coords)
