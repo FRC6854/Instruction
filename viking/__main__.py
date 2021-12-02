@@ -1,5 +1,5 @@
-from simulate import main as simulate
-from translate import main as translate
+from viking.simulate import main as simulate
+from viking.translate import main as translate
 
 # CLI for Viking
 # Basicly Imports __init__ and controls it all
