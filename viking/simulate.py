@@ -33,7 +33,7 @@ def main():
             print(coords)
 
             taken = perf_counter()-start
-            full = ((badge/10000)-(past_badge/10000))-taken
+            full = ((badge/1000)-(past_badge/1000))-taken
             if full > 0:
                 sleep(full)
             past_badge = badge
