@@ -3,6 +3,8 @@ from time import perf_counter
 from time import sleep
 from turtle import *
 
+QUICKER = 1 # Add more stuff to overflow to combat issues
+
 def main():
 
     color('blue')
@@ -18,24 +20,32 @@ def main():
         past_badge = 0
         x = 0
         y = 0
+        print("X Axis, Y Axis, Time Completed, Extra Time")
         for i in data:
             start = perf_counter()
             raw = i.replace("~", "0").split()
-            coords = raw[2:]
             badge = int(raw[0])
             command = raw[1]
 
             if command == "goto":
+                coords = raw[2:]
                 x = x+int(coords[0])/3
                 y = y+int(coords[1])/3
 
-            setpos(x, y)
-            print(coords)
+                setpos(x, y)
+
+            elif command == "rotate":
+                right(int(raw[2])-90)
 
             taken = perf_counter()-start
-            full = ((badge/1000)-(past_badge/1000))-taken
+            full = ((((badge/1000)-(past_badge/1000))-taken)-overflow)-QUICKER
+
+            print(f"{int(x)} {int(y)} {taken} {full}")
             if full > 0:
                 sleep(full)
+                overflow = 0
+            else:
+                overflow = full
             past_badge = badge
         
         end_fill()
