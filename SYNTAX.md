@@ -17,6 +17,12 @@ Flags
 ```
 {badge} goto {x} {y}
 ```
+### Rotate Function
+Flags
+```
+{badge} rotate {degrees (clockwise)}
+```
+Swerve can use built in movement but other deployments can rotate to next movement.
 
 # Variables
 ## ~ Constant
