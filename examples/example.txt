@@ -1,3 +1,4 @@
+0 rotate 0
 10 goto ~ ~
 1887 goto 186 -7
 3541 goto 154 104
