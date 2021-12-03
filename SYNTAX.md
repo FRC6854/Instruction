@@ -12,10 +12,10 @@ Universal Syntax for deploying future robot code.
 The clock cycle is what executes commands. All commands are asynchronous and are loaded in via Viking. Commands will be executed by the badge, the badge is a number coralating to when the command should be executed. Badges are in mileseconds (1000:second).
 
 ## Universal Functions
-### Goto Function
+### Translate Function
 Flags
 ```
-{badge} goto {x} {y}
+{badge} translate {x} {y}
 ```
 ### Rotate Function
 Flags
