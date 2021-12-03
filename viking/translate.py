@@ -39,7 +39,7 @@ def main():
 
             if data != past:
                 badge = past_badge+(x_dyn*ratio)+(y_dyn+ratio)
-                bakery += f"{badge} goto {x} {y}\n"
+                bakery += f"{badge} translate {x} {y}\n"
                 past_badge = badge # Now that it isnt refrenced, you can create a future refrence
             past = data
             past_split = data.split(",")

@@ -3,7 +3,7 @@ from time import perf_counter
 from time import sleep
 from turtle import *
 
-QUICKER = 1 # Add more stuff to overflow to combat issues
+QUICKER = 20 # Add more stuff to overflow to combat issues
 
 def main():
 
@@ -27,7 +27,7 @@ def main():
             badge = int(raw[0])
             command = raw[1]
 
-            if command == "goto":
+            if command == "translate":
                 coords = raw[2:]
                 x = x+int(coords[0])/3
                 y = y+int(coords[1])/3
