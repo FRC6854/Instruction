@@ -11,7 +11,7 @@ with open("README.md") as f:
 setuptools.setup(
     name="viking",
  
-    version="0.0.5",
+    version="1.0.0",
  
     author="FRC6854 Robotics",
  
@@ -35,4 +35,9 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    entry_points={
+        'console_scripts': [
+            'viking=viking.cli.main'
+        ]
+    },
 )
