@@ -11,7 +11,7 @@ with open("README.md") as f:
 setuptools.setup(
     name="viking",
  
-    version="1.0.1",
+    version="1.0.2",
  
     author="FRC6854 Robotics",
  

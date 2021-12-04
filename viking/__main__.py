@@ -1,4 +1,5 @@
-from viking.cli import main
+from viking.cli import main, front
 
 if __name__ == "__main__":
+    front()
     main()
