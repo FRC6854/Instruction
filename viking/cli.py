@@ -21,6 +21,7 @@ def front():
         print(i.format("\u001b[36m", "\u001b[34m", "\u001b[1m\u001b[31m"))
 
 def main():
+    front()
     print("{}(1) Translate   CSV --> Viking Instruction".format("\u001b[34m", "\u001b[0m"), end="\n")
     print("{}(2) Simulate Viking Instruction".format("\u001b[34m", "\u001b[0m"), end="\n")
 
