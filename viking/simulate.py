@@ -3,7 +3,7 @@ from time import perf_counter
 from time import sleep
 from turtle import *
 
-QUICKER = 20 # Add more stuff to overflow to combat issues
+QUICKER = 0 # Add more stuff to overflow to combat issues
 
 def main():
 
@@ -20,12 +20,14 @@ def main():
         past_badge = 0
         x = 0
         y = 0
-        print("X Axis, Y Axis, Time Completed, Extra Time")
+        print("Ordered Coords, X Axis, Y Axis, Time Completed, Extra Time")
         for i in data:
             start = perf_counter()
             raw = i.replace("~", "0").split()
             badge = int(raw[0])
             command = raw[1]
+
+            coords = "Undefined"
 
             if command == "translate":
                 coords = raw[2:]
@@ -33,6 +35,9 @@ def main():
                 y = y+int(coords[1])/3
 
                 setpos(x, y)
+            
+            elif command == "goto":
+                coords = "UNVALID COMMAND: USE TRANSLATE"
 
             elif command == "rotate":
                 right(int(raw[2])-90)
@@ -40,7 +45,7 @@ def main():
             taken = perf_counter()-start
             full = ((((badge/1000)-(past_badge/1000))-taken)-overflow)-QUICKER
 
-            print(f"{int(x)} {int(y)} {taken} {full}")
+            print(f"{coords} {int(x)} {int(y)} {taken} {full}")
             if full > 0:
                 sleep(full)
                 overflow = 0
@@ -53,4 +58,8 @@ def main():
             
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        print("Terminated Simulator")
+        print(e)
