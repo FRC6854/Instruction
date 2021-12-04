@@ -2,14 +2,12 @@
 Eventual System to branch off from CSV to a new Instruction System. 
 
 # Install
-## Easy way
-Pip will be used for installing all requirements, just do `pip install viking`.  
-Then you can run the script by doing
+Use pip, the default package manager in python. Install the package `viking`, which should after be a callable command from your shell.
+### Example for Windows users
 ```
-user@computer ~ % python3
-import viking
-viking.translate.main()
+py3 -m pip install viking
 ```
-## Full CLI
-First, clone the repo. Then run
-`pip install -r requirements.txt`. After you are done then simply do `python3 -m viking`
+### Example for Linux / MacOS
+```
+pip3 install viking
+```
