@@ -49,38 +49,5 @@ def main():
         with open(input(), "w") as f:
             f.write(bakery)
 
-        print("{}Extracted Reflect Database File (Leave empty do disable): ".format("\u001b[34m"), end="")
-        # This is for eventually having software load reflect to Instruction, as reflect has a trend system that could work with swerve
-        # This script uses Reflect backend syntax to maximize speed, not checking for input errors
-
-        inp = input()
-
-        if not inp == "":
-            print("{}{}{}Creating Reflect File".format("\u001b[36m", "\u001b[34m", "\u001b[1m\u001b[31m"))
-
-            db = Database(inp)
-            if os.path.exists(inp):
-                sys.exit("ReflectDB File already exists!")
-            else:
-                db.create_all()
-
-            with open(file_path) as f:
-                data = f.read()
-
-            basket = []
-            for i, data in tqdm(enumerate(data.splitlines())):
-                coords = data.split(",")
-                egg = {
-                    "x": coords[0],
-                    "y": coords[1],
-                    "id": "AUTOFILL"
-                }
-                basket.append(db.dumps(egg))
-
-            for i in basket:
-                db.publish(i)
-
-            print("{}Finished File: ".format("\u001b[34m"), end="")
-
 if __name__ == "__main__":
     main()
